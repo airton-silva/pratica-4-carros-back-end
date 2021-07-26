@@ -18,7 +18,7 @@ exports.post = (req, res) => {
  
 exports.put = (req, res) => {
   res.json(
-    CarroService.update(
+    carroService.update(
       req.params.id,
       new Carro(req.body.name, req.body.model, 
                 req.body.anoFabric, req.body.anoModel, 
@@ -28,5 +28,5 @@ exports.put = (req, res) => {
 };
  
 exports.delete = (req, res) => {
-  res.json(productService.delete(req.params.id));
+  res.json(carroService.delete(req.params.id));
 };
