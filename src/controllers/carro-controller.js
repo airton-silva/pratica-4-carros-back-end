@@ -5,6 +5,20 @@ var carroService = new CarroService();
 exports.get = (req, res) => {
   res.json(carroService.getAll());
 };
+
+// exports.getcontReg = (req, res) => {
+//   res.json(carroService.getContRegiste(req.params.reg));
+// };
+
+exports.getByModel = (req, res) => {
+  res.json(carroService.getByModel(req.query.model));
+};
+
+
+exports.getQty = (req, res) =>{
+  res.json(carroService.getQty(req.query.qty));
+};
+  
  
 exports.getById = (req, res) => {
   res.json(carroService.getById(req.params.id));
@@ -29,4 +43,8 @@ exports.put = (req, res) => {
  
 exports.delete = (req, res) => {
   res.json(carroService.delete(req.params.id));
+};
+
+exports.paginatedResults = (req, res, next) => {
+  res.json(carroService.getById(req.params, next));
 };
